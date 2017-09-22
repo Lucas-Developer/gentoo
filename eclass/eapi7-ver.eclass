@@ -16,8 +16,6 @@
 #
 # https://bugs.gentoo.org/482170
 #
-# Note: version comparison function is not included currently.
-#
 # @ROFF .SS
 # Version strings
 #
