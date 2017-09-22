@@ -182,7 +182,7 @@ ver_rs() {
 # Compare two versions <va> and <vb>.  If <va> is less than, equal to,
 # or greater than <vb>, return 1, 2, or 3 as exit status, respectively.
 _ver_compare() {
-	local va=${1} vb=${2} a an al as ar b bn bl bs br re
+	local va=${1} vb=${2} a an al as ar b bn bl bs br re LC_ALL=C
 
 	re="^([0-9]+(\.[0-9]+)*)([a-z]?)((_(alpha|beta|pre|rc|p)[0-9]*)*)(-r[0-9]+)?$"
 
@@ -271,7 +271,6 @@ _ver_compare() {
 # revision parts), and the comparison is performed according to
 # the algorithm specified in the PMS.
 ver_test() {
-	local LC_ALL=C
 	local va op vb
 
 	if [[ $# -eq 3 ]]; then
