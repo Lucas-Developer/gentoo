@@ -212,9 +212,9 @@ _ver_compare() {
 		a=${an%%.*}
 		b=${bn%%.*}
 		if [[ ${a} == 0* || ${b} == 0* ]]; then
-			# Remove trailing zeros
-			while [[ ${a} == *0 ]]; do a=${a::-1}; done
-			while [[ ${b} == *0 ]]; do b=${b::-1}; done
+			# Remove any trailing zeros
+			[[ ${a} =~ 0+$ ]] && a=${a%"${BASH_REMATCH[0]}"}
+			[[ ${b} =~ 0+$ ]] && b=${b%"${BASH_REMATCH[0]}"}
 			[[ ${a} > ${b} ]] && return 3
 			[[ ${a} < ${b} ]] && return 1
 		else
