@@ -152,7 +152,7 @@ teqr 0 ver_test 1.2_pre08-r09 -eq 1.2_pre8-r9
 teqr 0 ver_test 0 -lt 2147483648 # 2**31
 teqr 0 ver_test 0 -lt 4294967296 # 2**32
 teqr 0 ver_test 0 -lt 576460752303423488 # 2**59
-#teqr 0 ver_test 0 -lt 9223372036854775808 # 2**63 fails, integer rollover
+teqr 0 ver_test 0 -lt 9223372036854775808 # 2**63
 
 # Bad number or ordering of arguments
 txf ver_test 1
